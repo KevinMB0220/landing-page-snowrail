@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, Wallet } from 'lucide-react';
-import ConnectWalletModal from './ConnectWalletModal';
+import { Play, BookOpen } from 'lucide-react';
 
 const letterVariants = {
   hidden: { y: "100%" },
@@ -16,12 +15,10 @@ const letterVariants = {
 };
 
 const Hero: React.FC = () => {
-  const [isWalletOpen, setIsWalletOpen] = useState(false);
   const title = "Autonomous Treasury Orchestrator";
   
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8">
-      <ConnectWalletModal isOpen={isWalletOpen} onClose={() => setIsWalletOpen(false)} />
       
       <div className="max-w-7xl mx-auto w-full text-center relative z-10">
         
@@ -77,7 +74,7 @@ const Hero: React.FC = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           {/* Primary Button with Border Beam */}
-          <div className="relative group cursor-pointer" onClick={() => setIsWalletOpen(true)}>
+          <a href="https://docs.snowrail.io" target="_blank" rel="noopener noreferrer" className="relative group cursor-pointer">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-electric-blue to-purple-600 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <button className="relative flex items-center gap-3 px-8 py-4 bg-navy-900 rounded-full leading-none overflow-hidden">
               <span className="absolute inset-0 rounded-full border border-white/10"></span>
@@ -87,10 +84,10 @@ const Hero: React.FC = () => {
                 <span className="absolute top-0 left-1/2 w-[40%] h-[100%] -translate-x-1/2 bg-gradient-to-r from-transparent via-electric-blue/50 to-transparent rotate-[0deg] origin-bottom animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity" style={{ transformOrigin: 'center center' }}></span>
               </span>
               
-              <Wallet className="w-5 h-5 text-electric-blue" />
-              <span className="text-white font-semibold">Connect Wallet</span>
+              <BookOpen className="w-5 h-5 text-electric-blue" />
+              <span className="text-white font-semibold">Documentation</span>
             </button>
-          </div>
+          </a>
 
           {/* Secondary Button */}
           <button className="flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:scale-105 transition-all duration-300 backdrop-blur-sm group">

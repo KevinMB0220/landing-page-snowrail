@@ -66,16 +66,16 @@ const PoweredBy: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="relative group"
+              className="relative group h-full"
             >
               {/* Card Background with Glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Card Content */}
-              <div className="relative glass-panel p-8 rounded-2xl border border-white/10 hover:border-electric-blue/50 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="relative glass-panel p-8 rounded-2xl border border-white/10 hover:border-electric-blue/50 transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col min-h-[280px]">
                 {/* Logo Container */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative">
+                <div className="flex justify-center mb-6 flex-shrink-0">
+                  <div className="relative h-16 w-16">
                     {/* Glow Effect */}
                     <div className="absolute inset-0 blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500">
                       {partner.icon}
@@ -88,7 +88,7 @@ const PoweredBy: React.FC = () => {
                 </div>
 
                 {/* Partner Info */}
-                <div className="text-center">
+                <div className="text-center flex-grow flex flex-col justify-center">
                   <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-electric-blue transition-colors duration-300">
                     {partner.name}
                   </h3>
